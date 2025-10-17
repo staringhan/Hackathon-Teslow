@@ -105,7 +105,7 @@ Ces opérations garantissent :
 
  **Maria** se distingue comme la meilleure défenseuse tout en figurant dans le top offensif, montrant une **grande polyvalence**.
 
-![top5Save](/top5Save.png)
+![top5Save](./top5Save.png)
 
 ---
 
@@ -122,7 +122,7 @@ Cela peut s’expliquer par :
 * une **meilleure répartition des joueurs expérimentés**,
 * ou des **facteurs externes** (position de la table, lumière, etc.).
 
-![tauxVictoire](/tauxVictoire.png)
+![tauxVictoire](./tauxVictoire.png)
 
 ---
 
@@ -134,7 +134,7 @@ Cela peut s’expliquer par :
 | Durée moyenne          | ~14 minutes |
 
 
-![dureeMoyenne](/tempMoyen.png)
+![dureeMoyenne](./tempMoyen.png)
 
 ---
 
@@ -199,4 +199,5 @@ Le lien entre **corrélations (durée, score, performance)** et **base IoT** per
 
 
 ABENOJAR QUENTIN  Data IA
+
 
