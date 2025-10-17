@@ -66,6 +66,9 @@ Une fois votre commande réalisé le service matériel et numérique est monté 
 - 
 ### Dev' FullStack :
 
+- Front en React car léger et courbe d'apprentissage rapide, intégration facile avec .NET. Développement plus rapide idéal pour le temps du projet.
+Utilisation de la librairie Ant Design pour l'esthétique qui ont des composants faciles à utiliser par rapport au temps du projet. 
+
 ### IoT/Mobile :
 
 ### IA & Data
