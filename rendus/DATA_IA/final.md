@@ -91,7 +91,7 @@ Ces opérations garantissent :
 
  **Julie** domine légèrement, mais les écarts sont faibles : les dix premiers joueurs présentent un niveau offensif très homogène.
 
-![top10buteur](/top10Buteur.png)
+![top10buteur](./top10Buteur.png)
 
 #### Top 5 des défenseurs
 
@@ -199,3 +199,4 @@ Le lien entre **corrélations (durée, score, performance)** et **base IoT** per
 
 
 ABENOJAR QUENTIN  Data IA
+
