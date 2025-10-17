@@ -5,7 +5,7 @@ import "./navbar.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../auth/useAuth.js"; 
-import { users } from "../auth/users.js";
+import { loginApi } from "../services/authService.js";
 
 function Navbar() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -13,25 +13,16 @@ function Navbar() {
   const { currentUser, login, logout } = useAuth();
 
   const handleOk = async () => {
-    try {
-      const loginValues = await form.validateFields();
-      const user = users[loginValues.user];
+  try {
+    const { user: username, password } = await form.validateFields();
+    const res = await loginApi(username, password); // { token: "..." }
+    login(res.token); // pass only the string
+    setIsModalVisible(false);
+  } catch (err) {
+    message.error(err.message || "Connexion échouée");
+  }
+};
 
-      if (!user) {
-        form.setFields([{ name: "user", errors: ["Nom d’utilisateur inconnu !"] }]);
-        return;
-      }
-      if (user.password !== loginValues.password) {
-        form.setFields([{ name: "password", errors: ["Mot de passe incorrect !"] }]);
-        return;
-      }
-
-      login({ username: loginValues.user, isAdmin: user.isAdmin });
-      setIsModalVisible(false);
-    } catch {
-      message.error("Veuillez remplir tous les champs !");
-    }
-  };
 
   // Menu de base
   const menuItems = [{ key: "classement", icon: <CrownOutlined />, label: <Link to="/classement">Classement</Link>}];
