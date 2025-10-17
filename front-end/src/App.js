@@ -14,6 +14,7 @@ import PrivateAdminRoute from "./auth/privateRouteAdmin.js";
 function App() {
   
   return (
+    // Les Routes de pages qui fonctionnent en fonction des droits de l'user
     <Router>
       <Navbar />
       <Routes>

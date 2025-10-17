@@ -85,6 +85,7 @@ function Reserver() {
             <div className="reservation-container">
                 <Card className="card-reservation">
                     <div style={{ marginBottom: 20, textAlign: "center" }}>
+                        
                         <Button type={mode === "solo" ? "primary" : "default"} onClick={() => setMode("solo")} style={{ marginRight: 10 }}>
                             Solo
                         </Button>
@@ -105,11 +106,13 @@ function Reserver() {
                                 name="enemy"
                                 rules={[{ required: true, message: "Veuillez sélectionner un adversaire !" }]}
                             >
+                            
                             <Select placeholder="Choisir un adversaire">
                                 {users.map((u) => (
                                 <Option key={u.id} value={u.id}>{u.pseudo}</Option>
                                 ))}
                             </Select>
+
                             </Form.Item>
                         )}
 
@@ -121,6 +124,7 @@ function Reserver() {
                                     rules={[{ required: true, message: "Veuillez sélectionner un allié !"}]
                                 }
                                 >
+                                    {/* Update les select si un user est déjà pris */}
                                     <Select placeholder="Allié" value={selected.ally} onChange={(v) => handleChange("ally", v)}>
                                         {getNewOptions("ally").map(u => (
                                             <Option key={u.id} value={u.id}>{u.pseudo}</Option>
@@ -171,6 +175,7 @@ function Reserver() {
                             name="time"
                             rules={[{ required: true, message: "Veuillez choisir une heure !" }]}
                         >
+                            {/* Saut de minutes par 30 */}
                             <TimePicker
                                 style={{ width: "100%" }}
                                 format="HH:mm"

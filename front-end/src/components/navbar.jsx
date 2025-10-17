@@ -76,9 +76,9 @@ function Navbar() {
           </Button>
       )}
 
-      <Modal
+      <Modal // Bulle de connexion 
         title="Connexion"
-        open={isModalVisible}
+        open={isModalVisible} 
         onOk={handleOk}
         onCancel={() => setIsModalVisible(false)}
         okText="Se connecter"

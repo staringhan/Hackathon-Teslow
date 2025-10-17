@@ -30,7 +30,8 @@ function Classement() {
     <div>
       <h1 className="title-page">🏆 Classement des joueurs 🏆</h1>
 
-      <div className="search-container">
+      {/* Barre de recherche */}
+      <div className="search-container"> 
         <Input
           placeholder="Rechercher un joueur"
           value={search}
@@ -38,6 +39,7 @@ function Classement() {
         />
       </div>
 
+      {/* La list scroll */}
       <div className="div-classement">
         <div id="scrollable-div" className="scrollable-div">
           <InfiniteScroll
