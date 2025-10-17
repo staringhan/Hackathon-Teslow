@@ -62,13 +62,68 @@ Bienvenue dans le Hackathon Ynov Toulouse 2025 !
 
 ## Guide de déploiement
 
-> Expliquez comment déployer votre application **EN MOINS DE LIGNES DE COMMANDE POSSIBLES**. Docker, Ansible, Terraform, Scripts Shell... Le but est de pouvoir déployer votre application en une seule commande ou presque.
+Pour déployer notre stack , nous avons choisis d'utiliser des conteneur docker pour l'établissement des services et du ansible pour le déploiement.
 
-Exemple de lancement en **une seule commande**:
+Pour une installation propre il faut quelques prérequis.
 
-[Références Proxmox HelperScripts](https://github.com/community-scripts/ProxmoxVE/tree/main/install)
+### Prérequis
 
-> /!\ IMPORTANT /!\ : Votre projet sera déployé sur une machine **LINUX** (Debian/Ubuntu), avec 4Go de RAM et 2 CPU (x86_64). Assurez-vous que votre application peut fonctionner dans ces conditions. Il n'y aura pas de "Ca marche sur mon Mac." ou encore "Si on alligne les astres sur Windows XP ça passe.".
+- une machine sous debian
+- un accès internet
+- Des accès root à la machine
+
+### Installation
+
+En root
+
+```bash
+root@teslow:~# ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/root/.ssh/id_ed25519):
+Enter passphrase for "/root/.ssh/id_ed25519" (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_ed25519
+Your public key has been saved in /root/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:hw1Qfs9vxNc7t9GP3tKuudzObFZmocqBUytQzguaq5M root@teslow
+The key's randomart image is:
++--[ED25519 256]--+
+|      ...        |
+|       o .       |
+|        * .      |
+|       o B + . ..|
+|      o S * + + +|
+|     o   * o + .*|
+|    . .   + o oB+|
+|   E .     o o.BX|
+|   .o        .BXO|
++----[SHA256]-----+
+```
+
+```bash
+root@teslow:~$ ssh-copy-id root@localhost
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_ed25519.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@localhost's password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with: "ssh 'root@localhost'"
+and check to make sure that only the key(s) you wanted were added.
+```
+
+Après avoir génerer les clef ssh , copier le dossier hackathon et son contenue dans le répertoire de votre choix.
+
+déplacez vous dans le dossier hackathon et exécuter les commandes suivantes:
+
+```
+root@teslow:~/hackathon$ ./prerequis.sh
+root@teslow:~/hackathon$ ansible-playbook server_install.yml
+```
+Pour vérifier que tout fonctionne vous pouves faire un `docker ps -a` qui vous afficheras les conteneurs lancés.
+
+vous pouvez également maintenant accéder aux différentes interfaces graphiques comme pour cokpit ou portainer.
 
 ## Etat des lieux
 
