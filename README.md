@@ -148,10 +148,8 @@ vous pouvez également maintenant accéder aux différentes interfaces graphique
 
 ## Etat des lieux
 
-> Section d'honnêteté, décrivez ce qui n'a pas été fait, ce qui aurait pu être amélioré, les limitations de votre solution actuelle. Montrez que vous avez une vision critique de votre travail, de ce qui a été accompli durant ces deux demi-journées.
-
-Le but n'est pas de faire un produit fini, mais de montrer vos compétences techniques, votre capacité à travailler en équipe, à gérer un projet, et à livrer quelque chose de fonctionnel dans un temps limité.
-
 Du coté fullstack, le system de reservation n'a pas été implementer au niveau de back faute de temps. Les data model aurait du être mieux travailler avec le pole data ia. Mauvaise gestion du temps (perte de temps sur la maquette). 
 
 Coté infra nous aurions pu héberger notre solution en 100% cloud pour faire de la haute disponibilité avec plusieurs instance en s'adaptant au besoin. Améliorer la sécurité avec un hardening plus poussé.  Faire un vrai process de CI/CD.
+
+Actuellement, nous avons beaucoup de choses qui fonctionnent de manière individuelle, le front, la partie système embarqué, ainsi que le déploiement de base de l'infra. il y à par contre des choses qui n'ont pas été implémenter dans l'infra comme par exemple l'api , le front et le back-end par faute de temps.

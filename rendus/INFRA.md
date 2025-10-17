@@ -19,23 +19,6 @@ Votre mission : transformer le babyfoot classique en expérience high-tech pour 
 
 # Requis
 
-Ce README contient les requis fonctionnels de la partie Cloud & Infra de votre projet. Il doit compléter le README principal à la racine du projet, et servira la partie de votre note propre à votre spécialité.
-
-Basez-vous sur les spécifications dans [SPECIFICATIONS.md](../SPECIFICATIONS.md) pour remplir ce document.
-
-Décrivez ici les actions que vous avez menées, votre démarche, les choix techniques que vous avez faits, les difficultés rencontrées, etc. Précisez également dans quelle mesure vous avez pu collaborer avec les autres spécialités.
-
-Autrement, il n'y a pas de format imposé, mais essayez de rester clair et concis, je ne vous demande pas de rédiger un roman, passez à l'essentiel, et épargnez-moi de longues pages générées par IA (malusée).
-
-En conclusion, cela doit résumer votre travail en tant qu'expert.e infra, et vous permettre de garder un trace écrite de votre contribution au projet.
-
-Merci de votre participation, et bon courage pour la suite du hackathon !
-
-
-Pour la partie infrastructure nous avons travailler à deux de manière complémentaire.
-
-Nous avons commencez par analyser avec les autres équipes les besoins (base de donnée , serveur web ...) et nous avons ensuite réfléchi à l'implémentation.
-
 Pour l'installation, nous avons choisis d'utiliser une combinaison de docker et de ansible, ce choix viens du fait que nous étions déjà à l'aise sur ces technologies mais nous pensons également que la conteneurisation est un très bon moyen de déployer des applications de ce type.
 
 ## Simplicité de déploiement
@@ -58,3 +41,12 @@ Nous avons choisis la base de données en collaboration avec la partie fullstack
 Pour la partie surveillance, nous avons choisis d'utiliser portainer et cockpit.
 
 Portainer nous permets d'avoir une bonne vue de nos services en container pour voir 
+
+## Scalabilité
+
+Nous avons utilisé une raspberry pie en tant que solution d'installation, par conséquent la scalabilité n'est pas très bonne, il aurait fallut soit faire un cluster kube avec plusieurs raspbery, soit déployer sur une infra cloud comme aws.
+
+## Conclusion
+
+Tous nos fichiers de configurations sont dispo dans ce dépot, il manque quelques intégrations nottament le front et le back à la stack ansible / docker.
+s
