@@ -1,7 +1,22 @@
-# Analyse complète des données Babyfoot connectés
+# Hackathon - Ynov Toulouse 2025 : Babyfoot du futur - IA & Data
+
+## Equipe
+
+- IA & Data 1 : ABENOJAR Quentin
+
+Et si on réinventait l’expérience babyfoot à Ynov ? L’objectif de ce hackathon est de moderniser et digitaliser l’usage des babyfoots présents dans le Souk pour créer un service next-gen, pensé pour près de 1000 étudiants !
+
+Que ce soit via des gadgets connectés, un système de réservation intelligent, des statistiques en temps réel ou des fonctionnalités robustes pour une utilisation massive, nous cherchons des solutions innovantes qui allient créativité et technologie.
+
+Toutes les filières sont invitées à contribuer : Dev, Data, Infra, IoT, Systèmes embarqués… chaque idée compte pour rendre le babyfoot plus fun, plus pratique et plus connecté.
+
+Votre mission : transformer le babyfoot classique en expérience high-tech pour Ynov !
+
+Ce fichier contient les informations spécifiques à l'IA/Data de votre projet. Il suffit d'en remplir une seule fois, même si vous êtes plusieurs IA/Data dans l'équipe.
+
+# Requis
 
 ---
-
 ## Contexte général
 
 Ce travail vise à **analyser les données d’utilisation des babyfoots connectés** afin de :
@@ -179,6 +194,7 @@ Le lien entre **corrélations (durée, score, performance)** et **base IoT** per
 * le **classement en temps réel**,
 * la **maintenance prédictive** (détection d’anomalies),
 * et la **gestion intelligente des réservations**.
+
 
 
 
