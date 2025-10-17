@@ -12,7 +12,7 @@ import PrivateAdminRoute from "./auth/privateRouteAdmin.js";
 
 
 function App() {
-
+  
   return (
     <Router>
       <Navbar />
@@ -20,6 +20,7 @@ function App() {
         <Route path="/" element={<Accueil />} />
         <Route path="/classement" element={<Classement />} />
         <Route path="/encours" element={<PrivateUserRoute><EnCours /></PrivateUserRoute>} />
+        <Route path="/reserver" element={<Reserver />}/>
         <Route path="/reserver" element={<PrivateUserRoute><Reserver /></PrivateUserRoute>} />
         <Route path="/parties" element={<PrivateAdminRoute><Parties /></PrivateAdminRoute>} />
         <Route path="/utilisateurs" element={<PrivateAdminRoute><Utilisateurs /></PrivateAdminRoute>}/>

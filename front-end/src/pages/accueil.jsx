@@ -12,7 +12,7 @@ function Accueil(){
             <h2>RÉSERVEZ, JOUEZ ET GRIMPEZ DANS LE CLASSEMENT DU CAMPUS</h2>
             <img src={ImgAccueilBabyfoot} alt="babyfoot-accueil" className="image-accueil" />
           </div>
-        </div>
+      </div>
         <div className="section-below">
           <h2>Pourquoi Babyfoot Arena ?</h2>
           <p>
