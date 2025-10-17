@@ -56,6 +56,9 @@ Bienvenue dans le Hackathon Ynov Toulouse 2025 !
 
 > Ici, listez les principales technologies, en expliquant pourquoi vous les avez choisies. Tout choix technique, langages, frameworks doit être justifié. (Parce que vous maîtrisez déjà la techno, parce que c'est la plus adaptée au besoin, parce que c'est la plus innovante, etc.)
 
+API en C# parce qu'un de nous maitrise deja la techno.
+
+
 ## Architecture
 
 > Faite un schéma simple de l'architecture technique de votre solution. Chaque service/composant est un bloc, et les interactions entre les blocs sont des flèches. Vous pouvez utiliser des outils comme [draw.io](https://app.diagrams.net/), ou encore [Excalidraw](https://excalidraw.com/) pour créer vos schémas. C'est une vue d'ensemble, pas un détail de chaque composant. Chacun d'entre vous doit être capable d'expliquer cette architecture.
@@ -75,3 +78,5 @@ Exemple de lancement en **une seule commande**:
 > Section d'honnêteté, décrivez ce qui n'a pas été fait, ce qui aurait pu être amélioré, les limitations de votre solution actuelle. Montrez que vous avez une vision critique de votre travail, de ce qui a été accompli durant ces deux demi-journées.
 
 Le but n'est pas de faire un produit fini, mais de montrer vos compétences techniques, votre capacité à travailler en équipe, à gérer un projet, et à livrer quelque chose de fonctionnel dans un temps limité.
+
+Du coté fullstack, le system de reservation n'a pas été implementer au niveau de back faute de temps. Les data model aurait du être mieux travailler avec le pole data ia. Mauvaise gestion du temps (perte de temps sur la maquette). 
