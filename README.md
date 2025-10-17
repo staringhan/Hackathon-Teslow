@@ -52,6 +52,9 @@ Bienvenue dans le Hackathon Ynov Toulouse 2025 !
 
 > Décrivez brièvement le projet, son objectif. Utilisez une vue business pour décrire ce que votre produit/service apporte à vos utilisateurs.
 
+Teslow est le nouveau service de babyfoot next gen que tu dois essayer. Rapide grâce son server c# et son outillage conneté pour babyfoot, trackez toutes vos parties avec vos amis ou riveaux de compétition sans prise de tête avec une détection sans faille !
+Une fois votre commande réalisé le service matériel et numérique est monté et démonté en moins de 10 minutes !
+
 ## Technologies utilisées
 
 ### Cloud & Infrastructure :
