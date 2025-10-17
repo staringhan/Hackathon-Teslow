@@ -6,6 +6,7 @@ import Classement from "./pages/classement.jsx";
 import Reserver from "./pages/reserver.jsx";
 import Parties from "./pages/parties.jsx";
 import Utilisateurs from "./pages/utilisateurs.jsx";
+import EnCours from "./pages/encours.jsx";
 import PrivateUserRoute from "./auth/privateRouteUser.js";
 import PrivateAdminRoute from "./auth/privateRouteAdmin.js";
 
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Accueil />} />
         <Route path="/classement" element={<Classement />} />
+        <Route path="/encours" element={<PrivateUserRoute><EnCours /></PrivateUserRoute>} />
         <Route path="/reserver" element={<PrivateUserRoute><Reserver /></PrivateUserRoute>} />
         <Route path="/parties" element={<PrivateAdminRoute><Parties /></PrivateAdminRoute>} />
         <Route path="/utilisateurs" element={<PrivateAdminRoute><Utilisateurs /></PrivateAdminRoute>}/>

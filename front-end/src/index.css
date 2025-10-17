@@ -16,3 +16,10 @@ code {
 button {
   box-shadow: 1px 1px;
 }
+
+.title-page{
+  text-align: center;
+  margin: 25px;
+  font-weight: 800;
+  color: #0bbdb4;
+}

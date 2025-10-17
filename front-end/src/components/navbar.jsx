@@ -1,5 +1,5 @@
 import { Menu, Button, Modal, Form, Input, message } from "antd";
-import { BookOutlined, LoginOutlined, CrownOutlined, UnorderedListOutlined, UserOutlined, LogoutOutlined } from "@ant-design/icons";
+import { BookOutlined, LoginOutlined, CrownOutlined, UnorderedListOutlined, UserOutlined, LogoutOutlined, ApartmentOutlined } from "@ant-design/icons";
 import logo from "../img/logo.png";
 import "./navbar.css";
 import { Link } from "react-router-dom";
@@ -42,6 +42,11 @@ function Navbar() {
       key: "reservations",
       icon: <BookOutlined />,
       label: <Link to="/reserver">Réserver</Link>,
+    },
+    {
+      key: "enCours",
+      icon: <ApartmentOutlined />,
+      label: <Link to="/encours">En Cours</Link>,
     },)
   }
 

@@ -1,6 +1,11 @@
+import "../index.css";
+import "./parties.css";
+
 function Parties(){
     return(
-        <h1>Parties</h1>
+        <div>
+            <h1 className="title-page">🏓 Liste des parties 🏓</h1>
+        </div>
     );
 }
 
