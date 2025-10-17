@@ -31,3 +31,35 @@ Autrement, il n'y a pas de format imposé, mais essayez de rester clair et conci
 En conclusion, cela doit résumer votre travail en tant que développeur.se FullStack, et vous permettre de garder un trace écrite de votre contribution au projet.
 
 Merci de votre participation, et bon courage pour la suite du hackathon !
+
+
+
+# Synthèse des fonctionnalités du projet
+
+L’application propose une page d’accueil attrayante présentant le service et invitant les utilisateurs à s’inscrire ou se connecter.
+Le système d’authentification permet la création de comptes et la connexion des utilisateurs (étudiants et administrateurs).
+Un dashboard administrateur offre une interface de gestion des babyfoots : visualisation de leur état, disponibilité et statistiques d’utilisation, ainsi que la gestion des utilisateurs (ajout, modification, suppression).
+
+Une API RESTful assure la communication entre le front-end et le back-end, avec un endpoint CRUD complet, des codes retours HTTP appropriés et une documentation via Swagger.
+Le code est conçu pour être lisible, maintenable et conforme aux bonnes pratiques de développement.
+
+Remarque : la gestion des rôles (utilisateur standard, administrateur) ainsi que la vue d’ensemble des babyfoots (état, disponibilité, statistiques) ne sont pas encore fonctionnelles au niveau du back-end.
+
+Concernant les choix techniques, le back-end repose sur une API REST développée en C#, technologie maîtrisée par l’équipe.
+Le front-end est réalisé avec React, offrant une interface moderne, réactive et facilement extensible.
+
+Une bonne collaboration inter-pôles a également été mise en place :
+
+    Avec le pôle Infrastructure, pour la conteneurisation des applications et la mise en place d’environnements cohérents.
+
+    Avec le pôle Data/IA, pour la définition des modèles de données, la création du dataset et la conception de la base de données.
+
+    Avec le pôle Systèmes embarqués, pour la récupération et la structuration des données issues des capteurs intégrés aux babyfoots.
+
+Cependant, plusieurs difficultés ont été rencontrées au cours du projet :
+
+    Un manque de temps pour finaliser certaines fonctionnalités.
+
+    Une mauvaise communication entre les équipes, notamment concernant la définition et la synchronisation des data models.
+
+    Un manque d’organisation générale ayant parfois freiné l’avancement et la coordination entre les pôles.
