@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 
-function PrivateUserRoute({ element }) {
+function PrivateUserRoute({ children }) {
   const storedUser = localStorage.getItem("user");
   const currentUser = storedUser ? JSON.parse(storedUser) : null;
 
@@ -8,7 +8,7 @@ function PrivateUserRoute({ element }) {
     return <Navigate to="/" replace />;
   }
 
-  return element
+  return children;
 }
 
 export default PrivateUserRoute;

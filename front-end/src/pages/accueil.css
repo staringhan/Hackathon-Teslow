@@ -4,13 +4,10 @@
     object-fit: cover;
 }
 
-.ant-card-body {
-    padding: 10px 0 0 0!important;
-}
-
 .div-accueil {
     margin: 0 100px 50px 100px;
     border-radius: 0px; 
+    padding-top: 10px;
     background-color: #0bbdb4;
 }
 
@@ -26,16 +23,4 @@
     border: 3px gray;
     color: black;
     text-align: left;
-}
-
-.section-below h2::before{
-background-color: black;
-    border-top-right-radius: .375rem;
-    content: "";
-    display: block;
-    height: .375rem;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 2.875rem;
 }
