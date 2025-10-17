@@ -1,0 +1,74 @@
+---
+- name: Run Docker installation script
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Ensure the install_docker.sh script is executable
+      file:
+        path: ./install_docker.sh
+        mode: '0755'
+        state: file
+
+    - name: Run the Docker install script
+      command: "./install_docker.sh"
+
+- name: Launch Docker Compose v2
+  hosts: localhost
+  become: yes
+  vars:
+    compose_project_path: ./mysql
+  tasks:
+    - name: Ensure Docker Compose project is up
+      community.docker.docker_compose_v2:
+        project_src: "{{ compose_project_path }}"
+        state: present
+
+- name: Launch portainer  
+  hosts: localhost
+  become: yes
+  vars:
+    compose_project_path: ./portainer
+  tasks:
+    - name: Ensure Docker Compose project is up
+      community.docker.docker_compose_v2:
+        project_src: "{{ compose_project_path }}"
+        state: present
+
+- name: Install and enable Cockpit on Raspberry Pi
+  hosts: localhost
+  become: true
+  gather_facts: yes
+
+  tasks:
+    - name: Update apt cache and upgrade packages
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: Install Cockpit
+      apt:
+        name: cockpit
+        state: present
+
+    - name: Ensure Cockpit service is enabled and started
+      systemd:
+        name: cockpit
+        enabled: yes
+        state: started
+
+    - name: Print access info
+      debug:
+        msg: "Cockpit installed. Access via https://{{ ansible_host }}:9090"
+        
+- name: setup firewall
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Ensure the configUFW.sh  script is executable
+      file:
+        path: ./configUFW.sh
+        mode: '0755'
+        state: file
+
+    - name: Run the firewall script
+      command: "./configUFW.sh"

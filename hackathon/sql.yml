@@ -1,0 +1,17 @@
+- name: Initialize MySQL database
+  hosts: db_servers
+  become: true
+  vars:
+    db_name: mydb
+    db_user: root
+    db_password: mypassword
+    sql_file: /path/to/init.sql
+  tasks:
+    - name: Run init SQL script on MySQL
+      community.mysql.mysql_db:
+        name: "{{ db_name }}"
+        state: import
+        target: "{{ sql_file }}"
+        login_user: "{{ db_user }}"
+        login_password: "{{ db_password }}"
+
