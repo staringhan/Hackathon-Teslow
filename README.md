@@ -52,26 +52,99 @@ Bienvenue dans le Hackathon Ynov Toulouse 2025 !
 
 > Décrivez brièvement le projet, son objectif. Utilisez une vue business pour décrire ce que votre produit/service apporte à vos utilisateurs.
 
+Teslow est le nouveau service de babyfoot next gen que tu dois essayer. Rapide grâce son server c# et son outillage conneté pour babyfoot, trackez toutes vos parties avec vos amis ou riveaux de compétition sans prise de tête avec une détection sans faille !
+Une fois votre commande réalisé le service matériel et numérique est monté et déployé en moins de 10 minutes !
+
 ## Technologies utilisées
 
-> Ici, listez les principales technologies, en expliquant pourquoi vous les avez choisies. Tout choix technique, langages, frameworks doit être justifié. (Parce que vous maîtrisez déjà la techno, parce que c'est la plus adaptée au besoin, parce que c'est la plus innovante, etc.)
+### Cloud & Infrastructure :
+- Ansible
+- Bash
+- Docker
+- Portainer
+- RaspbianOS
+- 
+### Dev' FullStack :
 
 API en C# parce qu'un de nous maitrise deja la techno.
 
 
 ## Architecture
+- Front en React car léger et courbe d'apprentissage rapide, intégration facile avec .NET. Développement plus rapide idéal pour le temps du projet.
+Utilisation de la librairie Ant Design pour l'esthétique qui ont des composants faciles à utiliser par rapport au temps du projet. 
 
-> Faite un schéma simple de l'architecture technique de votre solution. Chaque service/composant est un bloc, et les interactions entre les blocs sont des flèches. Vous pouvez utiliser des outils comme [draw.io](https://app.diagrams.net/), ou encore [Excalidraw](https://excalidraw.com/) pour créer vos schémas. C'est une vue d'ensemble, pas un détail de chaque composant. Chacun d'entre vous doit être capable d'expliquer cette architecture.
+### IoT/Mobile :
+
+### IA & Data
+
+## Architecture
+
+<img width="756" height="488" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/1f90c229-76c0-45eb-85c0-ce595dd00b72" />
 
 ## Guide de déploiement
 
-> Expliquez comment déployer votre application **EN MOINS DE LIGNES DE COMMANDE POSSIBLES**. Docker, Ansible, Terraform, Scripts Shell... Le but est de pouvoir déployer votre application en une seule commande ou presque.
+Pour déployer notre stack , nous avons choisis d'utiliser des conteneur docker pour l'établissement des services et du ansible pour le déploiement.
 
-Exemple de lancement en **une seule commande**:
+Pour une installation propre il faut quelques prérequis.
 
-[Références Proxmox HelperScripts](https://github.com/community-scripts/ProxmoxVE/tree/main/install)
+### Prérequis
 
-> /!\ IMPORTANT /!\ : Votre projet sera déployé sur une machine **LINUX** (Debian/Ubuntu), avec 4Go de RAM et 2 CPU (x86_64). Assurez-vous que votre application peut fonctionner dans ces conditions. Il n'y aura pas de "Ca marche sur mon Mac." ou encore "Si on alligne les astres sur Windows XP ça passe.".
+- une machine sous debian
+- un accès internet
+- Des accès root à la machine
+
+### Installation
+
+En root
+
+```bash
+root@teslow:~# ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/root/.ssh/id_ed25519):
+Enter passphrase for "/root/.ssh/id_ed25519" (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_ed25519
+Your public key has been saved in /root/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:hw1Qfs9vxNc7t9GP3tKuudzObFZmocqBUytQzguaq5M root@teslow
+The key's randomart image is:
++--[ED25519 256]--+
+|      ...        |
+|       o .       |
+|        * .      |
+|       o B + . ..|
+|      o S * + + +|
+|     o   * o + .*|
+|    . .   + o oB+|
+|   E .     o o.BX|
+|   .o        .BXO|
++----[SHA256]-----+
+```
+
+```bash
+root@teslow:~$ ssh-copy-id root@localhost
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_ed25519.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@localhost's password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with: "ssh 'root@localhost'"
+and check to make sure that only the key(s) you wanted were added.
+```
+
+Après avoir génerer les clef ssh , copier le dossier hackathon et son contenue dans le répertoire de votre choix.
+
+déplacez vous dans le dossier hackathon et exécuter les commandes suivantes:
+
+```
+root@teslow:~/hackathon$ ./prerequis.sh
+root@teslow:~/hackathon$ ansible-playbook server_install.yml
+```
+Pour vérifier que tout fonctionne vous pouves faire un `docker ps -a` qui vous afficheras les conteneurs lancés.
+
+vous pouvez également maintenant accéder aux différentes interfaces graphiques comme pour cokpit ou portainer.
 
 ## Etat des lieux
 
@@ -80,3 +153,5 @@ Exemple de lancement en **une seule commande**:
 Le but n'est pas de faire un produit fini, mais de montrer vos compétences techniques, votre capacité à travailler en équipe, à gérer un projet, et à livrer quelque chose de fonctionnel dans un temps limité.
 
 Du coté fullstack, le system de reservation n'a pas été implementer au niveau de back faute de temps. Les data model aurait du être mieux travailler avec le pole data ia. Mauvaise gestion du temps (perte de temps sur la maquette). 
+
+Coté infra nous aurions pu héberger notre solution en 100% cloud pour faire de la haute disponibilité avec plusieurs instance en s'adaptant au besoin. Améliorer la sécurité avec un hardening plus poussé.  Faire un vrai process de CI/CD.
