@@ -66,6 +66,10 @@ Une fois votre commande réalisé le service matériel et numérique est monté 
 - 
 ### Dev' FullStack :
 
+API en C# parce qu'un de nous maitrise deja la techno.
+
+
+## Architecture
 - Front en React car léger et courbe d'apprentissage rapide, intégration facile avec .NET. Développement plus rapide idéal pour le temps du projet.
 Utilisation de la librairie Ant Design pour l'esthétique qui ont des composants faciles à utiliser par rapport au temps du projet. 
 
@@ -148,5 +152,6 @@ vous pouvez également maintenant accéder aux différentes interfaces graphique
 
 Le but n'est pas de faire un produit fini, mais de montrer vos compétences techniques, votre capacité à travailler en équipe, à gérer un projet, et à livrer quelque chose de fonctionnel dans un temps limité.
 
+Du coté fullstack, le system de reservation n'a pas été implementer au niveau de back faute de temps. Les data model aurait du être mieux travailler avec le pole data ia. Mauvaise gestion du temps (perte de temps sur la maquette). 
 
 Coté infra nous aurions pu héberger notre solution en 100% cloud pour faire de la haute disponibilité avec plusieurs instance en s'adaptant au besoin. Améliorer la sécurité avec un hardening plus poussé.  Faire un vrai process de CI/CD.

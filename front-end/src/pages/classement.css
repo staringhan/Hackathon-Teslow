@@ -1,0 +1,32 @@
+.div-classement {
+    margin: 50px 20% 50px 20%;
+    border-radius: 0px; 
+}
+
+.scrollable-div {
+    height: 400px;
+    overflow: auto;
+    padding: 0 16px;
+    border: 1px solid rgba(140, 140, 140, 0.35);
+}
+
+.title-classement {
+    text-align: center;
+    margin: 25px;
+    font-weight: 800;
+    color: #0bbdb4;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center; 
+}
+
+.search-container input {
+  max-width: 200px;       
+  width: 100%;
+}
+
+.ant-input:hover, .ant-input:focus{
+  border-color: #0bbdb4!important;
+}
