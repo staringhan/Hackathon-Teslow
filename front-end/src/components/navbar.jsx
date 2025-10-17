@@ -13,15 +13,16 @@ function Navbar() {
   const { currentUser, login, logout } = useAuth();
 
   const handleOk = async () => {
-    try {
-      const { user: username, password } = await form.validateFields();
-      const token = await loginApi(username, password); 
-      login(token); 
-      setIsModalVisible(false);
-    } catch (err) {
-      message.error(err.message || "Connexion échouée");
-    }
-  };
+  try {
+    const { user: username, password } = await form.validateFields();
+    const res = await loginApi(username, password); // { token: "..." }
+    login(res.token); // pass only the string
+    setIsModalVisible(false);
+  } catch (err) {
+    message.error(err.message || "Connexion échouée");
+  }
+};
+
 
   const menuItems = [{ key: "classement", icon: <CrownOutlined />, label: <Link to="/classement">Classement</Link>}];
 

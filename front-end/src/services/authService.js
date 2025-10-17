@@ -1,6 +1,6 @@
 // src/services/authService.js
 export async function loginApi(username, password) {
-  const response = await fetch("https://localhost:7218/api/auth/login", {
+  const response = await fetch("https://localhost:8080/api/Auth/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
