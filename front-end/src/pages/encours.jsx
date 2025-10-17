@@ -15,7 +15,7 @@ const testData = [
 function EnCours(){
     return(
         <div>
-            <h1 className="title-page">Parties en cours</h1>
+            <h1 className="title-page">⏳ Parties en cours ⏳</h1>
             <div className="cards-container">
                 {testData.map((item) => (
                     <Card className="card-en-cours"

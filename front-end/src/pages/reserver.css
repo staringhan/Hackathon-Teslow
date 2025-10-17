@@ -1,0 +1,11 @@
+.reservation-container {
+  display: flex;
+  justify-content: center;  
+}
+
+.card-reservation{
+    width: 300px;
+    margin: 10px;
+    box-shadow: 1px 1px 1px gray;
+}
+
