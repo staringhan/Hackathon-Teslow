@@ -1,11 +1,11 @@
 import { Menu, Button, Modal, Form, Input, message } from "antd";
-import { BookOutlined, LoginOutlined, CrownOutlined, UnorderedListOutlined, UserOutlined, LogoutOutlined, ApartmentOutlined } from "@ant-design/icons";
+import { BookOutlined, LoginOutlined, CrownOutlined, UnorderedListOutlined, UserOutlined, LogoutOutlined } from "@ant-design/icons";
 import logo from "../img/logo.png";
 import "./navbar.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../auth/useAuth.js"; 
-import { users } from "../auth/users.js";
+import { loginApi } from "../services/authService.js"; // your API call function
 
 function Navbar() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -14,55 +14,37 @@ function Navbar() {
 
   const handleOk = async () => {
     try {
-      const loginValues = await form.validateFields();
-      const user = users[loginValues.user];
-
-      if (!user) {
-        form.setFields([{ name: "user", errors: ["Nom d’utilisateur inconnu !"] }]);
-        return;
-      }
-      if (user.password !== loginValues.password) {
-        form.setFields([{ name: "password", errors: ["Mot de passe incorrect !"] }]);
-        return;
-      }
-
-      login({ username: loginValues.user, isAdmin: user.isAdmin });
+      const { user: username, password } = await form.validateFields();
+      const token = await loginApi(username, password); 
+      login(token); 
       setIsModalVisible(false);
-    } catch {
-      message.error("Veuillez remplir tous les champs !");
+    } catch (err) {
+      message.error(err.message || "Connexion échouée");
     }
   };
 
-  // Menu de base
   const menuItems = [{ key: "classement", icon: <CrownOutlined />, label: <Link to="/classement">Classement</Link>}];
 
-  if(currentUser) {
-    menuItems.push(
-    {
+  if (currentUser) {
+    menuItems.push({
       key: "reservations",
       icon: <BookOutlined />,
       label: <Link to="/reserver">Réserver</Link>,
-    },
-    {
-      key: "enCours",
-      icon: <ApartmentOutlined />,
-      label: <Link to="/encours">En Cours</Link>,
-    },)
+    });
   }
 
   if (currentUser && currentUser.isAdmin) {
     menuItems.push(
-    {
-      key: "parties",
-      icon: <UnorderedListOutlined />,
-      label: <Link to="/parties">Parties</Link>,
-    },
-    {
-      key: "utilisateurs",
-      icon: <UserOutlined />,
-      label: <Link to="/utilisateurs">Utilisateurs</Link>,
-    }
-  
+      {
+        key: "parties",
+        icon: <UnorderedListOutlined />,
+        label: <Link to="/parties">Parties</Link>,
+      },
+      {
+        key: "utilisateurs",
+        icon: <UserOutlined />,
+        label: <Link to="/utilisateurs">Utilisateurs</Link>,
+      }
     );
   }
 
@@ -77,12 +59,13 @@ function Navbar() {
       {currentUser ? (
         <Link to="/">
           <Button type="primary" icon={<LogoutOutlined />} onClick={logout}>
-          Déconnexion
-        </Button></Link>
-      ) : (
-          <Button type="primary" icon={<LoginOutlined />} onClick={() => setIsModalVisible(true)}>
-            Se connecter
+            Déconnexion
           </Button>
+        </Link>
+      ) : (
+        <Button type="primary" icon={<LoginOutlined />} onClick={() => setIsModalVisible(true)}>
+          Se connecter
+        </Button>
       )}
 
       <Modal
