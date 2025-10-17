@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 export function useAuth() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -10,7 +10,7 @@ export function useAuth() {
   }, []);
 
   const login = (token) => {
-    const decoded = jwt_decode(token);
+    const decoded = jwtDecode(token);
     const user = {
       token,
       username: decoded.unique_name,
