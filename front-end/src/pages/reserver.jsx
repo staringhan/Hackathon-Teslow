@@ -23,7 +23,7 @@ const users = [
 const currentUser = [{pseudo:'John', id:1}]
 const { Option } = Select;
 
-
+// Désactiver les heures et minutes non disponibles avant 8h30 et après 16h
 function disabledTime(){
     return {
         disabledHours: () => {
@@ -34,13 +34,14 @@ function disabledTime(){
             return hours;
         },
         disabledMinutes: (selectedHour) => {
-            if (selectedHour === 8) return Array.from({ length: 30 }, (_, j) => j);
-            if (selectedHour === 16) return Array.from({ length: 60 }, (_, i) => i > 0 ? i : null).filter(Boolean);
+            if (selectedHour === 8) return [0];
+            if (selectedHour === 16) return [30];
             return [];
         },
     };
 };
 
+// Désactive la sélection de dates passées et les week-ends
 function disabledDate(current){
     if (!current) return false;
     
@@ -66,13 +67,13 @@ function Reserver() {
         console.log("Erreur :", errorInfo);
     };
 
-    const [selected, setSelected] = useState({ally: null, enemy1: null, enemy2: null
-});
+    const [selected, setSelected] = useState({ally: null, enemy1: null, enemy2: null});
 
     const handleChange = (field, value) => {
         setSelected(prev => ({ ...prev, [field]: value }));
     };
 
+    // Update les select si un joueur est déjà sélectionné dans un autre select
     const getNewOptions = (currentField) => {
         return users.filter(u => !Object.keys(selected)
             .some(j => j !== currentField && selected[j] === u.id));
@@ -174,6 +175,7 @@ function Reserver() {
                                 style={{ width: "100%" }}
                                 format="HH:mm"
                                 disabledTime={disabledTime}
+                                inputReadOnly={true}
                                 minuteStep={30}
                             />
                         </Form.Item>
